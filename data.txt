@@ -1,0 +1,1 @@
+[{"username":"Test","email":"test@test.com","fullname":"Test Testic","age":"20","location":"Nis","gender":"M","_id":0},{"username":"Darko","email":"darkojbozic@gmail.com","fullname":"Darko Bozic","age":"22","location":"Nis","gender":"M"}]

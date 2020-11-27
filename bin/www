@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+var debug = require('debug')('my-application');
+var app = require('../app');
+var fs = require('fs');
+var port = process.env.PORT || 3000;
+app.set('port', port);
+
+var saveData = function(json){
+
+    fs.writeFile('data.txt', JSON.stringify(json), function(err){
+        if (err) throw err;
+        console.log("File Saved:" + json);
+    });
+};
+
+
+var server = app.listen(port, function() {
+    fs.open('data.txt', 'r', function(err){
+        if (err) {
+            console.log(err)
+            saveData({});
+        }
+    });
+  debug('Express server listening on port ' + server.address().port);
+});
+
